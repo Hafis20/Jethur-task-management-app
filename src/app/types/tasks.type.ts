@@ -13,5 +13,5 @@ export type TaskStatus = 'Pending' | 'In Progress' | 'Completed' | 'Cancelled';
 
 
 export interface TaskWithComment extends Task {
-    comments:any[]
+    comments?:any[]
 }
