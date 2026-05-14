@@ -1,0 +1,16 @@
+<header>
+    <nav class="px-5 py-5 bg-emerald-700 text-white">
+        <div class="flex justify-between">
+            <div>
+                TASK APP
+            </div>
+            <ul class="flex gap-2
+            ">
+                @for(item of menu; track item.id){
+                <li [routerLink]="item.routerLink" class="cursor-pointer bg-white text-black px-5 py-2 rounded-md">
+                    {{item.title}}</li>
+                }
+            </ul>
+        </div>
+    </nav>
+</header>

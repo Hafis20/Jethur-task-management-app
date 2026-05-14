@@ -1,0 +1,101 @@
+<section class="p-4">
+    <div class="flex justify-end py-3">
+
+        <form [formGroup]="searchForm">
+            <input type="text" formControlName="searchText">
+        </form>
+
+        <button class="bg-emerald-700 px-5 py-2 text-white rounded-md cursor-pointer" (click)="openDialog()">Add
+            Task</button>
+    </div>
+    <table class="p-3 w-full">
+        <thead>
+            <tr>
+                <th>ID <button (click)="sortById()">{{idSort() === 'ASC' ? 'Asc' : 'Desc'}}</button></th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Assignee</th>
+                <th>Priority</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @for(task of tasks(); track task.id; let index=$index){
+            <tr class="w-full cursor-pointer hover:bg-gray-200" [class.bg-gray-100]="index%2===0"
+                [routerLink]="['/tasks',task.id]">
+                <td>{{task.id}}</td>
+                <td>{{task.title}}</td>
+                <td>{{task.description | truncate}}</td>
+                <td>{{task.assignee}}</td>
+                <td>{{task.priority}}</td>
+                <td>{{task.status}}</td>
+            </tr>
+            }
+        </tbody>
+
+
+    </table>
+</section>
+
+@if(isDialogOpen()){
+<app-dialog [title]="'Add Task'" (closeDialogEvent)="closeDialog()">
+    <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+        <!-- Title  -->
+        <div>
+            <label for="title">Title</label>
+            <input class="border px-2 py-1 rounded-md" type="text" formControlName="title">
+            @if(taskForm.controls['title']?.hasError('required')){
+            <small>Title is required</small>
+            }@else if(taskForm.controls['title']?.hasError('minlength')){
+            <small>Required minimum length</small>
+            }
+            
+        </div>
+        <!-- Description  -->
+        <div>
+            <label for="description">Description</label>
+            <input class="border px-2 py-1 rounded-md" type="text" formControlName="description">
+            @if(taskForm.controls['description']?.hasError('required') && taskForm.controls['description'].touched){
+            <p>Title is required</p>
+            }
+
+        </div>
+        <!-- Assignee  -->
+        <div>
+            <label for="assignee">Assignee</label>
+            <input class="border px-2 py-1 rounded-md" type="text" formControlName="assignee">
+            @if(taskForm.controls['assignee']?.hasError('required') && taskForm.controls['assignee'].touched){
+            <p>Title is required</p>
+            }
+        </div>
+        <!-- Priority  -->
+        <div>
+            <label for="">Priority</label>
+            <select formControlName="priority" name="" id="" class="border px-2 py-1 rounded-md">
+                @for(item of priorities; track $index){
+                <option [value]="item">{{item}}</option>
+                }
+            </select>
+        </div>
+        <!-- Status  -->
+        <div>
+            <label for="">Status</label>
+            <select formControlName="status" name="" id="" class="border px-2 py-1 rounded-md">
+                @for(item of statuses; track $index){
+                <option [value]="item">{{item}}</option>
+                }
+            </select>
+        </div>
+        <!-- Due Date  -->
+        <div>
+            <label for="">Due Date</label>
+            <input class="border px-2 py-1 rounded-md" type="date" formControlName="dueDate">
+        </div>
+
+        <button type="submit" [disabled]="taskForm.invalid"
+            class="bg-blue-500 text-white px-5 py-2 rounded-md">Submit</button>
+    </form>
+</app-dialog>
+}

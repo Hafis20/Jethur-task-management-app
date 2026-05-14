@@ -1,0 +1,201 @@
+[
+    {
+        "id": "T001",
+        "title": "Set up project repository",
+        "description": "Initialize the Git repository, set up branch protection rules, and configure the initial CI/CD pipeline for the new project.",
+        "assignee": "Priya Menon",
+        "priority": "High",
+        "status": "Completed",
+        "dueDate": "2026-05-08",
+        "comments": [
+            {
+                "id": "C001",
+                "author": "Anil Kumar",
+                "timestamp": "2026-04-25T10:00:00",
+                "text": "Should we use GitHub or GitLab for this project?",
+                "replies": [
+                    {
+                        "id": "C001-1",
+                        "author": "Priya Menon",
+                        "timestamp": "2026-04-25T11:30:00",
+                        "text": "GitHub. The team is more familiar with it.",
+                        "replies": [
+                            {
+                                "id": "C001-1-1",
+                                "author": "Anil Kumar",
+                                "timestamp": "2026-04-25T12:00:00",
+                                "text": "Agreed. Let's also enable Dependabot.",
+                                "replies": [
+                                    {
+                                        "id": "C001-1-1-1",
+                                        "author": "Priya Menon",
+                                        "timestamp": "2026-04-25T13:00:00",
+                                        "text": "Done. Pull request template is added too.",
+                                        "replies": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "C001-2",
+                        "author": "Rahul Das",
+                        "timestamp": "2026-04-26T09:00:00",
+                        "text": "Don't forget to add CODEOWNERS file.",
+                        "replies": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "T002",
+        "title": "Design database schema",
+        "description": "Create the ER diagram and define table structures for users, tasks, comments, and audit logs.",
+        "assignee": "Meera Krishnan",
+        "priority": "Critical",
+        "status": "In Progress",
+        "dueDate": "2026-05-16",
+        "comments": [
+            {
+                "id": "C002",
+                "author": "Suresh Pillai",
+                "timestamp": "2026-05-01T14:00:00",
+                "text": "Are we going with PostgreSQL or MySQL?",
+                "replies": [
+                    {
+                        "id": "C002-1",
+                        "author": "Meera Krishnan",
+                        "timestamp": "2026-05-01T15:30:00",
+                        "text": "PostgreSQL. We need JSONB support for the audit logs.",
+                        "replies": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "T003",
+        "title": "Implement user authentication",
+        "description": "Build login, signup, password reset flows with JWT-based authentication and refresh token rotation.",
+        "assignee": "Arjun S",
+        "priority": "Critical",
+        "status": "Pending",
+        "dueDate": "2026-05-17",
+        "comments": []
+    },
+    {
+        "id": "T004",
+        "title": "Build dashboard UI",
+        "description": "Create the main dashboard with KPI cards, recent activity feed, and quick action buttons.",
+        "assignee": "Divya Nair",
+        "priority": "Medium",
+        "status": "Pending",
+        "dueDate": "2026-05-25",
+        "comments": [
+            {
+                "id": "C004",
+                "author": "Kavya R",
+                "timestamp": "2026-05-05T10:00:00",
+                "text": "Do we have the Figma designs ready?",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "id": "T005",
+        "title": "Write API integration tests",
+        "description": "Set up Postman/Newman collections and integrate them with the CI pipeline for automated API testing.",
+        "assignee": "Rahul Das",
+        "priority": "Medium",
+        "status": "In Progress",
+        "dueDate": "2026-05-20",
+        "comments": []
+    },
+    {
+        "id": "T006",
+        "title": "Optimize image loading performance",
+        "description": "Investigate slow image loading on the gallery page. Users report 5–8 second load times on mobile.",
+        "assignee": "Anil Kumar",
+        "priority": "High",
+        "status": "In Progress",
+        "dueDate": "2026-05-14",
+        "comments": [
+            {
+                "id": "C006",
+                "author": "Priya Menon",
+                "timestamp": "2026-05-06T09:00:00",
+                "text": "Have you considered using lazy loading with intersection observer?",
+                "replies": [
+                    {
+                        "id": "C006-1",
+                        "author": "Anil Kumar",
+                        "timestamp": "2026-05-06T10:30:00",
+                        "text": "Yes, already implemented. The bottleneck seems to be the image size itself.",
+                        "replies": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "T007",
+        "title": "Update onboarding documentation",
+        "description": "Refresh the new-developer onboarding guide. Add sections for local setup, common debugging tips, and team conventions.",
+        "assignee": "Suresh Pillai",
+        "priority": "Low",
+        "status": "Pending",
+        "dueDate": "2026-06-05",
+        "comments": []
+    },
+    {
+        "id": "T008",
+        "title": "Migrate analytics to new provider",
+        "description": "Move from the current analytics provider to the new one. Ensure no data loss and update all tracking events.",
+        "assignee": "Meera Krishnan",
+        "priority": "Medium",
+        "status": "Cancelled",
+        "dueDate": "2026-05-10",
+        "comments": []
+    },
+    {
+        "id": "T009",
+        "title": "Fix login button alignment on mobile",
+        "description": "On Safari mobile, the login button appears offset by 8px on the right. Reported by 3 users.",
+        "assignee": "Divya Nair",
+        "priority": "Low",
+        "status": "Completed",
+        "dueDate": "2026-04-30",
+        "comments": []
+    },
+    {
+        "id": "T010",
+        "title": "Set up error monitoring",
+        "description": "Integrate Sentry or similar error monitoring service. Configure source maps and alerting rules.",
+        "assignee": "Arjun S",
+        "priority": "High",
+        "status": "Pending",
+        "dueDate": "2026-05-22",
+        "comments": []
+    },
+    {
+        "id": "T011",
+        "title": "Implement role-based access control",
+        "description": "Add RBAC for admin, manager, and user roles. Each role should have distinct permissions across the application.",
+        "assignee": "Priya Menon",
+        "priority": "Critical",
+        "status": "Pending",
+        "dueDate": "2026-05-18",
+        "comments": []
+    },
+    {
+        "id": "T012",
+        "title": "Refactor legacy payment module",
+        "description": "Current payment module has technical debt. Refactor to use the new API contract and improve test coverage above 80%.",
+        "assignee": "Kavya R",
+        "priority": "Medium",
+        "status": "In Progress",
+        "dueDate": "2026-06-10",
+        "comments": []
+    }
+]

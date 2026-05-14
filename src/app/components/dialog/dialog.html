@@ -1,0 +1,12 @@
+<section>
+    <div class="fixed bg-black/30 top-0 h-screen w-full flex items-center justify-center ">
+        <div class="flex flex-col items-center h-1/2 bg-white max-w-xl w-full rounded-2xl p-5 relative">
+            <div class="flex">
+                <p>{{title()}}</p>
+                <button class="absolute rounded-full right-2 top-2 border px-5 py-1 cursor-pointer" (click)="onClose()">Close</button>
+            </div>
+
+            <ng-content></ng-content>
+        </div>
+    </div>
+</section>
